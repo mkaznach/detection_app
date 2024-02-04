@@ -12,10 +12,11 @@ RUN apt-get update \
     && apt-get install -y libgl1-mesa-glx
 RUN apt-get update \
     && apt-get install -y libglib2.0-0
-RUN pip install torch
+RUN pip install --upgrade pip
+RUN pip install torch==2.0
 RUN pip install fastapi
 RUN pip install uvicorn
-RUN pip install openmim
+RUN pip install -U openmim
 RUN pip install python-multipart
 RUN mim install mmengine
 RUN mim install "mmcv>=2.0.0"
